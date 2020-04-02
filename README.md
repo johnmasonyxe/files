@@ -1,6 +1,4 @@
-# files
-manage files over public api
-## john mason - April 3 2020
+## john mason - submitted april 3 2020
 
 ## installation
 run yarn install
@@ -24,4 +22,5 @@ description of endpoint
 - todo
 
 ## other notes
-- todo
+- didn't spend time minimizing antd styles, if i was future proofing this project i would minimize the styles 
+- link to how to do that - https://ant.design/docs/react/use-with-create-react-app#Use-babel-plugin-import
