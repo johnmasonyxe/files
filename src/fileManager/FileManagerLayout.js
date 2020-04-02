@@ -12,7 +12,6 @@ type Props = {
     files: FileUploads,
     uploadFile: any => void,
     removeFile: FileUpload => void,
-    searchText: string,
     setSearchText: string => void,
 
 }
@@ -21,14 +20,12 @@ const FileManagerLayout = (props: Props) => {
         uploadFile,
         files,
         removeFile,
-        searchText,
         setSearchText,
     } = props;
 
     return (
         <div style={styles.container}>
             <FileManagerActionBar
-                searchText={searchText}
                 setSearchText={setSearchText}
                 uploadFile={uploadFile}
             />

@@ -10,13 +10,11 @@ const styles = {
 
 type Props = {
     uploadFile: any => void,
-    searchText: string,
     setSearchText: string => void,
 }
 const FileManagerActionBar = (props: Props) => {
     const {
         uploadFile,
-        searchText,
         setSearchText,
     } = props;
     const validateFile = (file: any) => {
@@ -31,7 +29,6 @@ const FileManagerActionBar = (props: Props) => {
         return isJpgOrPng && isLt2M;
     };
 
-    console.log({searchText});
     return (
         <div style={styles.container}>
             <Input.Search
@@ -47,15 +44,6 @@ const FileManagerActionBar = (props: Props) => {
                 action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
                 headers="authorization: 'authorization-text'"
                 onChange={(info) => {
-                    // const validFile = validateFile(info.file);
-                    //
-                    // if (!validFile) {
-                    //     // todo: make this message better
-                    //     message.error('please input a file of type x/y with size under z mb');
-                    //     return;
-                    // }
-                    console.log({info});
-
                     if (info.file.status !== 'uploading') {
                         console.log(info.file, info.fileList);
                     }

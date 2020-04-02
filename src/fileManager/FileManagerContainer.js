@@ -37,7 +37,6 @@ const FileManagerContainer = (props: Props) => {
     return (
         <>
             <FileManagerLayout
-                searchText={searchText}
                 setSearchText={setSearchText}
                 files={filteredFiles}
                 uploadFile={handleUploadFile}
