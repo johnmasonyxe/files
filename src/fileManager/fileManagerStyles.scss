@@ -1,0 +1,11 @@
+.flex-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+// todo: figure out what is wrong with this code
+//.flex-grid::after {
+//  content: "";
+//  flex: auto;
+//}

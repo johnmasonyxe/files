@@ -11,8 +11,9 @@ not addressed
 - api implementation
 
 ## libraries
-- flow, ease of use
-- antd for nice view, good components
+- flow for ease of use
+- antd for higher order view components
+- scss for more styling control
 
 ## api
 - this is an interview for the frontend with react, the api will be mocked because my ability to build good apis is not as relevant as my ability to create clean react code
