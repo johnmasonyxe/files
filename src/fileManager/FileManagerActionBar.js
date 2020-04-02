@@ -10,9 +10,15 @@ const styles = {
 
 type Props = {
     uploadFile: any => void,
+    searchText: string,
+    setSearchText: string => void,
 }
 const FileManagerActionBar = (props: Props) => {
-    const {uploadFile} = props;
+    const {
+        uploadFile,
+        searchText,
+        setSearchText,
+    } = props;
     const validateFile = (file: any) => {
         const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
         if (!isJpgOrPng) {
@@ -24,11 +30,16 @@ const FileManagerActionBar = (props: Props) => {
         }
         return isJpgOrPng && isLt2M;
     };
+
+    console.log({searchText});
     return (
         <div style={styles.container}>
             <Input.Search
                 placeholder="search documents"
-                onSearch={value => console.log(value)}
+                onSearch={value => {
+                    setSearchText(value);
+                    console.log({value})
+                }}
                 style={styles.search}
             />
             <Upload
