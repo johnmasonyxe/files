@@ -13,6 +13,7 @@ not addressed
 ## libraries
 - flow for ease of use
 - antd for higher order view components
+- lodash for nice pure performant functions
 - scss for more styling control
 
 ## api
