@@ -1,12 +1,12 @@
 import React from 'react';
+import FileManagerContainer from './fileManager/FileManagerContainer';
 import './App.css';
-import { Button } from 'antd';
 
 function App() {
   return (
-    <div className="App">
-      <Button>ant up and running</Button>
-    </div>
+    <>
+      <FileManagerContainer/>
+    </>
   );
 }
 

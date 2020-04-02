@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// note - antd button violates strictmode, current issue -> https://github.com/ant-design/ant-design/issues/22493
 ReactDOM.render(
   <React.StrictMode>
     <App />
