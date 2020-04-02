@@ -1,6 +1,6 @@
 // @flow
 import React  from 'react';
-import type { FileUploads } from './data/types';
+import type { FileUpload, FileUploads } from './data/types';
 import FileManagerFile from './FileManagerFile';
 import './fileManagerStyles.scss';
 
@@ -10,14 +10,19 @@ const styles = {
 
 type Props = {
     files: FileUploads,
+    removeFile: FileUpload => void,
 }
 const FileManagerFileList = (props: Props) => {
-    const {files} = props;
+    const {files, removeFile} = props;
     return (
         <div style={styles.container} className='flex-grid'>
             {files && files.map(file => {
                 return (
-                    <FileManagerFile key={file.uuid} file={file}/>
+                    <FileManagerFile
+                        key={file.uuid}
+                        file={file}
+                        removeFile={removeFile}
+                    />
                 );
             })}
         </div>
