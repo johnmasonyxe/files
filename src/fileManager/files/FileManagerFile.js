@@ -4,6 +4,7 @@ import { Button } from 'antd';
 import type { FileUpload } from '../data/types';
 import { formatBytes } from '../data/utils';
 import '../../App.scss';
+import { colorPrimary } from '../../App.scss';
 
 const styles = {
     container: {
@@ -38,7 +39,12 @@ const FileManagerFile = (props: Props) => {
                 </div>
                 <div style={{textAlign: 'right'}}>
                     <div>
-                        {file.name}
+                        {file && file.name && file.name.length > 4 &&
+                        <>
+                            {file.name.slice(0, -4)}
+                            <span style={{color: colorPrimary}}>{file.name.slice(-4)}</span>
+                        </>
+                        }
                     </div>
                     <div>{formatBytes(file.size)}</div>
                 </div>
