@@ -2,6 +2,7 @@
 import type { FileUpload, FileUploads } from './types';
 import axios from 'axios';
 import { message } from 'antd';
+import { buildApiConfig, getCookie } from './utils';
 
 export const uploadFileMock = (fileUpload: any): Promise<FileUpload> => {
     return Promise.resolve({
@@ -13,12 +14,8 @@ export const uploadFileMock = (fileUpload: any): Promise<FileUpload> => {
     })
 };
 export const uploadFile = (fileUpload: any): Promise<FileUpload> => {
-    const config = {
-        xsrfCookieName: 'XSRF-TOKEN', // help prevent cross-site request forgeries
-        xsrfHeaderName: 'X-XSRF-TOKEN', // help prevent cross-site request forgeries
-    };
     // normally i'd have mapper functions that transform the fileUpload to/from the api interface
-    axios.post(`/api/v1/files/`, fileUpload, config)
+    axios.post(`/api/v1/files/`, fileUpload, buildApiConfig())
         .then((response: { data: FileUpload }): FileUpload => {
             return response.data;
         })
@@ -37,15 +34,11 @@ export const searchFilesMock = (searchText: string): Promise<FileUploads> => {
     }])
 };
 export const searchFiles = (searchText: any): Promise<FileUploads> => {
-    const config = {
-        xsrfCookieName: 'XSRF-TOKEN', // help prevent cross-site request forgeries
-        xsrfHeaderName: 'X-XSRF-TOKEN', // help prevent cross-site request forgeries
-    };
     const data = {
         searchText: searchText,
     };
     // normally i'd have mapper functions that transform the fileUpload to/from the api interface
-    axios.post(`/api/v1/files/search`, data, config)
+    axios.post(`/api/v1/files/search`, data, buildApiConfig())
         .then((response: { data: FileUploads }): FileUploads => {
             return response.data;
         })
@@ -61,11 +54,7 @@ export const removeFileMock = (fileUpload: any): Promise<FileUpload> => {
     return Promise.resolve(fileUpload)
 };
 export const removeFile = (fileUpload: any): Promise<FileUpload> => {
-    const config = {
-        xsrfCookieName: 'XSRF-TOKEN', // help prevent cross-site request forgeries
-        xsrfHeaderName: 'X-XSRF-TOKEN', // help prevent cross-site request forgeries
-    };
-    axios.delete(`/api/v1/files/${fileUpload.uid}`, fileUpload, config)
+    axios.delete(`/api/v1/files/${fileUpload.uid}`, fileUpload, buildApiConfig())
         .then((response: { data: FileUpload }): FileUpload => {
             // the main reason i generally have apis pass back the object is to remove it from state
             // could easily just be done with an id

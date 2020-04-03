@@ -15,26 +15,39 @@
 + handles %3Cscript%3Ealert(1) %3C/script%3E
 
 ### delete a document
-- removes document
++ removes document
+- stretch ac - just use id
 - clears memory?
 
 ## requirements
-- no auth, login, user management
-- application should be secure
++ no auth, login, user management
++ app should look like wireframe
++ written in react
++ no state management library
++ other libs can be used without restriction (includes create react app)
 
-- app should look like wireframe
-- written in react
-- no state management library
-- other libs can be used without restriction (includes create react app)
+### application should be secure
++ apis use xsrfHeaderName, xsrfCookieName
+todo: explain why these help
+- stretch ac - add capcha 
+
+### testing 
 - ui should have tests that ensure functionality is working as intended (100% coverage not expected)
+- test logic functions
+- test view components
+- stretch - programatically test lib components to ensure they handle malicious input
+
 - tests for api not required
 
 ## the api
-- can use api server, fake api, mock api, external service
-- simulate functionality while running application
++ can use api server, fake api, mock api, external service
++ simulate functionality while running application
+todo: figure out if what i have done is adequate, i'm mocking 'storing' a file on the back end and passing back metadata
+about that file, determine if this is enough
 - store a file
-- be asynchronous when called from the react app
-- have documentation in the readme
+
++ be asynchronous when called from the react app
++ have documentation in the readme
 
 ## judged on
 - amount of functionality completed
