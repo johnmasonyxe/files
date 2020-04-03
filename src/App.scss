@@ -1,0 +1,21 @@
+@import '~antd/dist/antd.css';
+
+body {
+    background: #f5f5f5;
+}
+
+.flex-grid {
+  display: grid; /* 1 */
+  grid-template-columns: repeat(auto-fill, 300px); /* 2 */
+  grid-gap: 1rem; /* 3 */
+  justify-content: space-between; /* 4 */
+}
+
+@media (max-width: 600px) {
+  .mobile-layout {
+    display: flex;
+  }
+  .mobile-container {
+    max-width: 300px;
+  }
+}

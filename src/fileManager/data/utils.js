@@ -3,7 +3,8 @@ import type { FileUploads } from './types';
 import { reduce } from 'lodash';
 
 export const getTotalSizeForFiles = (files: FileUploads): number => {
-    return reduce(files, (acc, file) => {return acc + file.size}, 0);
+    const totalBytes = reduce(files, (acc, file) => {return acc + file.size}, 0);
+    return formatBytes(totalBytes);
 };
 
 // ref - https://stackoverflow.com/questions/15900485/correct-way-to-convert-size-in-bytes-to-kb-mb-gb-in-javascript

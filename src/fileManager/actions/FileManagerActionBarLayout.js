@@ -19,7 +19,7 @@ const FileManagerActionBarLayout = (props: Props) => {
     } = props;
 
     return (
-        <div className='flex-grid'>
+        <div style={styles.container}>
             <FileManagerActionBarSearch setSearchText={setSearchText}/>
             <FileManagerActionBarUpload uploadFile={uploadFile}/>
         </div>

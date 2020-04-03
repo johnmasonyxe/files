@@ -6,7 +6,7 @@ import { MOCK_FILES } from './data/mocks';
 import type { FileUpload } from './data/types';
 import { reject, filter } from 'lodash';
 import { message } from 'antd';
-
+import '../App.scss';
 type Props = {}
 
 const FileManagerContainer = (props: Props) => {
@@ -36,14 +36,14 @@ const FileManagerContainer = (props: Props) => {
     const filteredFiles = filter(files, f => f.name.includes(searchText));
 
     return (
-        <>
+        <div className='mobile-layout'>
             <FileManagerLayout
                 setSearchText={setSearchText}
                 files={filteredFiles}
                 uploadFile={handleUploadFile}
                 removeFile={handleRemoveFile}
             />
-        </>
+        </div>
     );
 };
 

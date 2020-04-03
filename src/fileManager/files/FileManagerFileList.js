@@ -3,7 +3,7 @@ import React from 'react';
 import FileManagerFile from './FileManagerFile';
 import type { FileUpload, FileUploads } from '../data/types';
 import { getTotalSizeForFiles } from '../data/utils';
-import '../fileManagerStyles.scss';
+import '../../App.scss';
 
 const styles = {
     container: {},

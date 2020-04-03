@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { Input } from 'antd';
+import '../../App.scss';
 
 const styles = {
     container: {display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'},

@@ -52,6 +52,8 @@ about that file, determine if this is enough
 ## judged on
 - amount of functionality completed
 - prioritization fo what is completed
+- tests: tests should ensure functionality works
+- stability: errors should be handled gracefully
 
 ### documentation
 - all instructions to run application
@@ -64,9 +66,6 @@ about that file, determine if this is enough
 ## code quality
 - code should be testable, modular, easy to understand and reuse
 - css should be responsive and use modern approaches to layout eg flex or grid
-
-tests: tests should ensure functionality works
-stability: errors should be handled gracefully
 
 ## not judged on
 - code style
