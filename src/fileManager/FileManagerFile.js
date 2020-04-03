@@ -3,6 +3,7 @@ import React from 'react';
 import FileManagerActionBar from './FileManagerActionBar';
 import type { FileUpload, FileUploads } from './data/types';
 import { Button } from 'antd';
+import { formatBytes } from './data/utils';
 
 const styles = {
     container: {
@@ -36,7 +37,7 @@ const FileManagerFile = (props: Props) => {
                 </div>
                 <div>
                     <div>{file.name}</div>
-                    <div>{file.size}</div>
+                    <div>{formatBytes(file.size)}</div>
                 </div>
             </div>
             <div style={{display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end', height: '100%'}}>

@@ -7,7 +7,7 @@ export const validateFile = (file: any): boolean => {
     }
     const fileSizeOk = file.size / 1024 / 1024 < 10;
     if (!fileSizeOk) {
-        message.error('Image must smaller than 2MB!');
+        message.error('Image must smaller than 10MB!');
     }
     return isJpgOrPng && fileSizeOk;
 };

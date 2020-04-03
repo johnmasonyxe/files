@@ -1,8 +1,8 @@
 
 ## core ac
 ### upload a document
-- only accepts jpg/png
-- max size 10MB
++ only accepts jpg/png
++ max size 10MB
 
 ### list all documents
 - page data on the front end 

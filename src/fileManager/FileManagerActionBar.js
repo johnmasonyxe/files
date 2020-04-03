@@ -1,7 +1,7 @@
 // @flow
-import React from 'react';
+import React, { useState } from 'react';
 import { UploadOutlined } from '@ant-design/icons';
-import { Upload, Input, message, Button } from 'antd';
+import { Upload, Input, message, Button, Spin } from 'antd';
 import { validateFile } from './data/validators';
 
 const styles = {
@@ -14,6 +14,7 @@ type Props = {
     setSearchText: string => void,
 }
 const FileManagerActionBar = (props: Props) => {
+    const [loadingFile, setLoadingFile] = useState(false);
     const {
         uploadFile,
         setSearchText,
@@ -32,12 +33,15 @@ const FileManagerActionBar = (props: Props) => {
                 action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
                 headers="authorization: 'authorization-text'"
                 onChange={(info) => {
+                    if (info.file.status === 'uploading') {
+                        setLoadingFile(true);
+                    }
                     if (info.file.status !== 'uploading') {
                         console.log(info.file, info.fileList);
                     }
                     if (info.file.status === 'done') {
                         uploadFile(info.file);
-                        message.success(`${info.file.name} file uploaded successfully`);
+                        setLoadingFile(false);
                     } else if (info.file.status === 'error') {
                         message.error(`${info.file.name} file upload failed.`);
                     }
@@ -46,7 +50,10 @@ const FileManagerActionBar = (props: Props) => {
                 beforeUpload={validateFile}
             >
                 <Button style={{width: '300px'}}>
-                    <UploadOutlined/> Click to Upload
+                    {loadingFile
+                        ? <Spin/>
+                        : <><UploadOutlined/> Click to Upload</>
+                    }
                 </Button>
             </Upload>
         </div>

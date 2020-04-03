@@ -1,8 +1,10 @@
 // @flow
 import type { FileUpload, FileUploads } from './types';
 import axios from 'axios';
+import { message } from 'antd';
 
 export const uploadFileMock = (fileUpload: any): Promise<FileUpload> => {
+    message.success(`file uploaded successfully`);
     return Promise.resolve({
         uid: (Math.random() * 1000).toString(),
         name: fileUpload.name,
@@ -56,6 +58,7 @@ export const searchFiles = (searchText: any): Promise<FileUploads> => {
 // could just pass back id of file removed or any sort of success message here
 // could just pass file uid to server as well
 export const removeFileMock = (fileUpload: any): Promise<FileUpload> => {
+    message.success(`file removed successfully`);
     return Promise.resolve(fileUpload)
 };
 export const removeFile = (fileUpload: any): Promise<FileUpload> => {
