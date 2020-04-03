@@ -38,9 +38,9 @@ const FileManagerContainer = (props: Props) => {
     const handleRemoveFile = (file: FileUpload) => {
         removeFile(file)
             .then((file) => {
-                const updatedFiles = reject(files, f => f.uid === file.uid);
+                const updatedFiles = reject(files, f => f.id === file.id);
                 setFiles(updatedFiles);
-                const updatedFilteredFiles = reject(filteredFiles, f => f.uid === file.uid);
+                const updatedFilteredFiles = reject(filteredFiles, f => f.id === file.id);
                 setFilteredFiles(updatedFilteredFiles);
             })
             .catch(err => message.error(`file upload failed`));
@@ -49,6 +49,7 @@ const FileManagerContainer = (props: Props) => {
 
     const handleSearchFiles = (searchText: string) => {
         setSearchText(searchText);
+        // note: the mock takes all files in as an arg but the actual api implementation would not
         searchFiles(searchText, files)
             .then((files) => {
                 setFilteredFiles(files)

@@ -1,7 +1,7 @@
 // @flow
 
 export type FileUpload = {
-    uid: string,
+    id: string,
     name: string,
     status: string,
     url: string,

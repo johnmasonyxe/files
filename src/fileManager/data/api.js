@@ -10,7 +10,7 @@ import { filterFile } from './validators';
 // decide if this is adequate, i'm mocking 'storing' a file on the back end and passing the relevant data needed to display it
 export const uploadFileMock = (fileUpload: any): Promise<FileUpload> => {
     return Promise.resolve({
-        uid: (Math.random() * 1000).toString(),
+        id: (Math.random() * 1000).toString(),
         name: fileUpload.name,
         status: 'success',
         url: 'https://www.tvovermind.com/wp-content/uploads/2017/06/Omaze.jpg',
@@ -53,7 +53,7 @@ export const removeFileMock = (fileUpload: any): Promise<FileUpload> => {
     return Promise.resolve(fileUpload)
 };
 export const removeFile = (fileUpload: any): Promise<FileUpload> => {
-    axios.delete(`/api/v1/files/${fileUpload.uid}`, fileUpload, buildApiConfig())
+    axios.delete(`/api/v1/files/${fileUpload.id}`, fileUpload, buildApiConfig())
         .then((response: { data: FileUpload }): FileUpload => {
             // the main reason i generally have apis pass back the object is to remove it from state
             // could easily just be done with an id
