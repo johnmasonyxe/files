@@ -2,8 +2,12 @@
 import type { FileUpload, FileUploads } from './types';
 import axios from 'axios';
 import { message } from 'antd';
-import { buildApiConfig, getCookie } from './utils';
+import { buildApiConfig } from './utils';
+import { filter } from 'lodash';
+import { filterFile } from './validators';
 
+// ac specifies 'store a file'
+// decide if this is adequate, i'm mocking 'storing' a file on the back end and passing the relevant data needed to display it
 export const uploadFileMock = (fileUpload: any): Promise<FileUpload> => {
     return Promise.resolve({
         uid: (Math.random() * 1000).toString(),
@@ -24,14 +28,9 @@ export const uploadFile = (fileUpload: any): Promise<FileUpload> => {
         });
 };
 
-export const searchFilesMock = (searchText: string): Promise<FileUploads> => {
-    return Promise.resolve([{
-        uid: (Math.random() * 1000).toString(),
-        name: 'my upload name',
-        status: 'success',
-        url: 'https://www.tvovermind.com/wp-content/uploads/2017/06/Omaze.jpg',
-        size: 1000,
-    }])
+export const searchFilesMock = (searchText: string, allFiles: FileUploads): Promise<FileUploads> => {
+    const filteredFiles = filter(allFiles, f => filterFile(f, searchText));
+    return Promise.resolve(filteredFiles);
 };
 export const searchFiles = (searchText: any): Promise<FileUploads> => {
     const data = {

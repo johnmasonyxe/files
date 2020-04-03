@@ -1,4 +1,5 @@
 import { message } from 'antd';
+import type { FileUpload } from './types';
 
 export const validateFile = (file: any): boolean => {
     const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
@@ -10,4 +11,8 @@ export const validateFile = (file: any): boolean => {
         message.error('Image must smaller than 10MB!');
     }
     return isJpgOrPng && fileSizeOk;
+};
+
+export const filterFile = (f: FileUpload, searchText: string): boolean => {
+    return f.name.toLowerCase().includes(searchText.toLowerCase());
 };

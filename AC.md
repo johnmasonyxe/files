@@ -1,9 +1,14 @@
+## todos
+- extract inline styles to constants
+- mock searching documents via the api
+- test all logic
+- test components
+- get better understanding of xsrfCookieName and xsrfHeaderName and why they are relevant/useful
 
 ## core ac
 ### upload a document
 + only accepts jpg/png
 + max size 10MB
-- stretch ac - add captcha?
 
 ### list all documents
 - stretch ac - page data on the front end 
@@ -28,8 +33,7 @@
 
 ### application should be secure
 + apis use xsrfHeaderName, xsrfCookieName
-todo: explain why these help
-- stretch ac - add capcha 
++ add capcha to assert that a user is human 
 
 ### testing 
 - ui should have tests that ensure functionality is working as intended (100% coverage not expected)
@@ -37,14 +41,12 @@ todo: explain why these help
 - test view components
 - stretch - programatically test lib components to ensure they handle malicious input
 
-- tests for api not required
++ tests for api not required
 
 ## the api
 + can use api server, fake api, mock api, external service
 + simulate functionality while running application
-todo: figure out if what i have done is adequate, i'm mocking 'storing' a file on the back end and passing back metadata
-about that file, determine if this is enough
-- store a file
++ store a file
 
 + be asynchronous when called from the react app
 + have documentation in the readme
