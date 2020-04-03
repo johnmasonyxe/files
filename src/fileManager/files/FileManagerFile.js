@@ -4,21 +4,9 @@ import { Button } from 'antd';
 import type { FileUpload } from '../data/types';
 import { formatBytes } from '../data/utils';
 import '../../base.scss';
+import './files.scss';
 import { colorPrimary } from '../../base.scss';
 
-const styles = {
-    container: {
-        background: 'white',
-        border: '1px solid #e8e8e8',
-        width: '300px',
-        height: '150px',
-        marginBottom: '20px',
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '5px',
-    },
-    img: {width: '100px', height: '100px'}
-};
 
 type Props = {
     file: FileUpload,
@@ -28,16 +16,16 @@ const FileManagerFile = (props: Props) => {
     const {file, removeFile} = props;
     return (
 
-        <div className='card fade' style={styles.container}>
-            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        <div className='card fade files-file-container'>
+            <div className='files-file-card-container'>
                 <div>
                     <img
-                        style={styles.img}
+                        className='files-file-img'
                         src={file.url}
                         alt={file.name}
                     />
                 </div>
-                <div style={{textAlign: 'right'}}>
+                <div className='files-file-card-text'>
                     <div>
                         {file && file.name && file.name.length > 4 &&
                         <>
@@ -49,7 +37,7 @@ const FileManagerFile = (props: Props) => {
                     <div>{formatBytes(file.size)}</div>
                 </div>
             </div>
-            <div style={{display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end', height: '100%'}}>
+            <div className='files-file-card-actions'>
                 <Button onClick={() => removeFile(file)}>
                     Delete File
                 </Button>
