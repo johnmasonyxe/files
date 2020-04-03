@@ -1,8 +1,5 @@
 ## todos
-- extract inline styles to constants
-- mock searching documents via the api
-- test all logic
-- test components
+- send id to be deleted not entire object
 - get better understanding of xsrfCookieName and xsrfHeaderName and why they are relevant/useful
 
 ## core ac
@@ -37,8 +34,8 @@
 
 ### testing 
 - ui should have tests that ensure functionality is working as intended (100% coverage not expected)
-- test logic functions
-- test view components
++ tested logic functions
+- tested view components
 - stretch - programatically test lib components to ensure they handle malicious input
 
 + tests for api not required
@@ -58,9 +55,9 @@
 - stability: errors should be handled gracefully
 
 ### documentation
-- all instructions to run application
-- security issues that have been addressed
-- security issues that have not been addressed
++ all instructions to run application
++ security issues that have been addressed
++ security issues that have not been addressed
 - future improvements
 - libraries used and why
 - api documentation
