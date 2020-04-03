@@ -34,8 +34,10 @@ const FileManagerFile = (props: Props) => {
                         alt={file.name}
                     />
                 </div>
-                <div>
-                    <div>{file.name}</div>
+                <div style={{textAlign: 'right'}}>
+                    <div>
+                        {file.name}
+                    </div>
                     <div>{formatBytes(file.size)}</div>
                 </div>
             </div>

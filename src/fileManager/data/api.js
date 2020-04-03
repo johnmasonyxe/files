@@ -5,15 +5,18 @@ import { message } from 'antd';
 import { buildApiConfig } from './utils';
 import { filter } from 'lodash';
 import { filterFile } from './validators';
+import { MOCK_UPLOADED_FILE_URLS } from './mocks';
 
 // ac specifies 'store a file'
 // decide if this is adequate, i'm mocking 'storing' a file on the back end and passing the relevant data needed to display it
 export const uploadFileMock = (fileUpload: any): Promise<FileUpload> => {
+    const mockUrl = MOCK_UPLOADED_FILE_URLS[Math.round(Math.random() * 9)];
+    console.log({mockUrl});
     return Promise.resolve({
         id: (Math.random() * 1000).toString(),
         name: fileUpload.name,
         status: 'success',
-        url: 'https://www.tvovermind.com/wp-content/uploads/2017/06/Omaze.jpg',
+        url: mockUrl,
         size: fileUpload.size,
     })
 };
