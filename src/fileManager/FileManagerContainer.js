@@ -60,8 +60,8 @@ const FileManagerContainer = (props: Props) => {
     return (
         <div className='mobile-layout'>
             <FileManagerLayout
-                setSearchText={handleSearchFiles}
                 files={filteredFiles}
+                setSearchText={handleSearchFiles}
                 uploadFile={handleUploadFile}
                 removeFile={handleRemoveFile}
             />

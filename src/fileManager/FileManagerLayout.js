@@ -3,10 +3,7 @@ import React  from 'react';
 import FileManagerActionBarLayout from './actions/FileManagerActionBarLayout';
 import type { FileUpload, FileUploads } from './data/types';
 import FileManagerFileList from './files/FileManagerFileList';
-
-const styles = {
-    container: {margin: '20px auto', maxWidth: '960px'}
-};
+import './fileManager.scss';
 
 type Props = {
     files: FileUploads,
@@ -24,7 +21,7 @@ const FileManagerLayout = (props: Props) => {
     } = props;
 
     return (
-        <div style={styles.container}>
+        <div className='files-layout-container'>
             <FileManagerActionBarLayout
                 setSearchText={setSearchText}
                 uploadFile={uploadFile}

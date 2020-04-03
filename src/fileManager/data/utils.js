@@ -28,11 +28,3 @@ export const getCookie = (name: string): string => {
       return parts.pop().split(";").shift();
   }
 };
-
-export const buildApiConfig = () => {
-    return {
-        xsrfCookieName: 'XSRF-TOKEN', // help prevent cross-site request forgeries
-        xsrfHeaderName: 'X-XSRF-TOKEN', // help prevent cross-site request forgeries
-        capchaToken: getCookie('recaptcha-v3-site-key'),
-    };
-};

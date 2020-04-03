@@ -2,11 +2,18 @@
 import type { FileUpload, FileUploads } from './types';
 import axios from 'axios';
 import { message } from 'antd';
-import { buildApiConfig } from './utils';
+import { getCookie } from './utils';
 import { filter } from 'lodash';
 import { filterFile } from './validators';
 import { MOCK_UPLOADED_FILE_URLS } from './mocks';
 
+const buildApiConfig = () => {
+    return {
+        xsrfCookieName: 'XSRF-TOKEN', // help prevent cross-site request forgeries
+        xsrfHeaderName: 'X-XSRF-TOKEN', // help prevent cross-site request forgeries
+        capchaToken: getCookie('recaptcha-v3-site-key'),
+    };
+};
 // ac specifies 'store a file'
 // decide if this is adequate, i'm mocking 'storing' a file on the back end and passing the relevant data needed to display it
 export const uploadFileMock = (fileUpload: any): Promise<FileUpload> => {
