@@ -1,11 +1,12 @@
 // @flow
-import React  from 'react';
+import React from 'react';
 import type { FileUpload, FileUploads } from './data/types';
 import FileManagerFile from './FileManagerFile';
 import './fileManagerStyles.scss';
+import { getTotalSizeForFiles } from './data/utils';
 
 const styles = {
-    container: {paddingTop: '20px'},
+    container: {},
 };
 
 type Props = {
@@ -15,18 +16,24 @@ type Props = {
 const FileManagerFileList = (props: Props) => {
     const {files, removeFile} = props;
     return (
-        <div style={styles.container} className='flex-grid'>
-            {files && files.map(file => {
-                return (
-                    <div key={file.uid}>
-                        <FileManagerFile
+        <div>
+            <div className='mobile-container' style={{paddingTop: '20px', margin: 'auto', display: 'flex', justifyContent: 'space-between'}}>
+                <div>{files.length} files</div>
+                <div>total size: {getTotalSizeForFiles(files)}</div>
+            </div>
+            <div style={styles.container} className='flex-grid'>
+                {files && files.map(file => {
+                    return (
+                        <div key={file.uid}>
+                            <FileManagerFile
 
-                            file={file}
-                            removeFile={removeFile}
-                        />
-                    </div>
-                );
-            })}
+                                file={file}
+                                removeFile={removeFile}
+                            />
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 };

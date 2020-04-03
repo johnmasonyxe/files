@@ -9,6 +9,10 @@
     flex-flow: row wrap;
     justify-content: center;
   }
+
+  .mobile-container {
+    max-width: 300px;
+  }
 }
 // todo: figure out what is wrong with this code
 //.flex-grid::after {

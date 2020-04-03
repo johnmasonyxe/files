@@ -35,7 +35,8 @@ const FileManagerFile = (props: Props) => {
                     />
                 </div>
                 <div>
-                    {file.name}
+                    <div>{file.name}</div>
+                    <div>{file.size}</div>
                 </div>
             </div>
             <div style={{display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end', height: '100%'}}>

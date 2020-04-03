@@ -8,6 +8,7 @@ export const uploadFileMock = (fileUpload: any): Promise<FileUpload> => {
         name: 'my upload name',
         status: 'success',
         url: 'https://www.tvovermind.com/wp-content/uploads/2017/06/Omaze.jpg',
+        size: 1000,
     })
 };
 

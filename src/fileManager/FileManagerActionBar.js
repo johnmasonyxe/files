@@ -6,7 +6,7 @@ import { validateFile } from './data/validators';
 
 const styles = {
     container: {display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'},
-    search: {maxWidth: '300px'}
+    search: {width: '500px'}
 };
 
 type Props = {
@@ -25,6 +25,7 @@ const FileManagerActionBar = (props: Props) => {
                 placeholder="search documents"
                 onSearch={value => setSearchText(value)}
                 style={styles.search}
+                className='mobile-container'
             />
             <Upload
                 name='file'
@@ -44,7 +45,7 @@ const FileManagerActionBar = (props: Props) => {
                 showUploadList={false}
                 beforeUpload={validateFile}
             >
-                <Button>
+                <Button style={{width: '300px'}}>
                     <UploadOutlined/> Click to Upload
                 </Button>
             </Upload>
