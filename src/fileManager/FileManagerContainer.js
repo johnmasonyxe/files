@@ -5,6 +5,7 @@ import { uploadFileMock as uploadFile, removeFileMock as removeFile } from './da
 import { MOCK_FILES } from './data/mocks';
 import type { FileUpload } from './data/types';
 import { reject, filter } from 'lodash';
+import { message } from 'antd';
 
 type Props = {}
 
@@ -14,20 +15,22 @@ const FileManagerContainer = (props: Props) => {
     const [searchText, setSearchText] = useState('');
 
     const handleUploadFile = (fileUpload: any) => {
-        uploadFile(fileUpload).then((file) => {
-            setFiles([file, ...files]);
-        })
-        // todo: handle api failure
+        uploadFile(fileUpload)
+            .then((file) => {
+                message.success(`file uploaded successfully`);
+                setFiles([file, ...files]);
+            })
+            .catch(err => message.error(`file upload failed`));
     };
 
     const handleRemoveFile = (file: FileUpload) => {
-        removeFile(file).then((file) => {
-            const updatedFiles = reject(files, f => {
-                return f.uid === file.uid;
-            });
-            setFiles(updatedFiles);
-        })
-        // todo: handle api failure
+        removeFile(file)
+            .then((file) => {
+                const updatedFiles = reject(files, f => f.uid === file.uid);
+                setFiles(updatedFiles);
+            })
+            .catch(err => message.error(`file upload failed`));
+
     };
 
     const filteredFiles = filter(files, f => f.name.includes(searchText));

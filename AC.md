@@ -5,7 +5,7 @@
 + max size 10MB
 
 ### list all documents
-- page data on the front end 
+- stretch ac - page data on the front end 
 
 ### search documents by name
 - using the api

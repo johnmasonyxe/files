@@ -26,7 +26,6 @@ const FileManagerFileList = (props: Props) => {
                     return (
                         <div key={file.uid}>
                             <FileManagerFile
-
                                 file={file}
                                 removeFile={removeFile}
                             />

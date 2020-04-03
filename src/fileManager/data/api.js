@@ -4,7 +4,6 @@ import axios from 'axios';
 import { message } from 'antd';
 
 export const uploadFileMock = (fileUpload: any): Promise<FileUpload> => {
-    message.success(`file uploaded successfully`);
     return Promise.resolve({
         uid: (Math.random() * 1000).toString(),
         name: fileUpload.name,
