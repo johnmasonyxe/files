@@ -18,11 +18,13 @@ const FileManagerFileList = (props: Props) => {
         <div style={styles.container} className='flex-grid'>
             {files && files.map(file => {
                 return (
-                    <FileManagerFile
-                        key={file.uuid}
-                        file={file}
-                        removeFile={removeFile}
-                    />
+                    <div key={file.uid}>
+                        <FileManagerFile
+
+                            file={file}
+                            removeFile={removeFile}
+                        />
+                    </div>
                 );
             })}
         </div>

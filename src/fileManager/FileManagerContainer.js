@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import FileManagerLayout from './FileManagerLayout';
 import { uploadFileMock as uploadFile, removeFileMock as removeFile } from './data/api';
 import { MOCK_FILES } from './data/mocks';
-import type { FileUpload, FileUploads } from './data/types';
+import type { FileUpload } from './data/types';
 import { reject, filter } from 'lodash';
 
 type Props = {}
@@ -23,10 +23,8 @@ const FileManagerContainer = (props: Props) => {
     const handleRemoveFile = (file: FileUpload) => {
         removeFile(file).then((file) => {
             const updatedFiles = reject(files, f => {
-                console.log({f, file, shouldReject: f.uid === file.uid});
                 return f.uid === file.uid;
             });
-            console.log({updatedFiles, files, file});
             setFiles(updatedFiles);
         })
         // todo: handle api failure

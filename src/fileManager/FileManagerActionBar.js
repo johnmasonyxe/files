@@ -2,6 +2,7 @@
 import React from 'react';
 import { UploadOutlined } from '@ant-design/icons';
 import { Upload, Input, message, Button } from 'antd';
+import { validateFile } from './data/validators';
 
 const styles = {
     container: {display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'},
@@ -17,26 +18,12 @@ const FileManagerActionBar = (props: Props) => {
         uploadFile,
         setSearchText,
     } = props;
-    const validateFile = (file: any) => {
-        const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
-        if (!isJpgOrPng) {
-            message.error('You can only upload JPG/PNG file!');
-        }
-        const isLt2M = file.size / 1024 / 1024 < 10;
-        if (!isLt2M) {
-            message.error('Image must smaller than 2MB!');
-        }
-        return isJpgOrPng && isLt2M;
-    };
 
     return (
         <div style={styles.container}>
             <Input.Search
                 placeholder="search documents"
-                onSearch={value => {
-                    setSearchText(value);
-                    console.log({value})
-                }}
+                onSearch={value => setSearchText(value)}
                 style={styles.search}
             />
             <Upload
