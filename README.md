@@ -22,6 +22,7 @@ not addressed
 - lodash for nice pure performant functions
 - scss for more styling control
 - axios for demonstrating how i'd send requests if i wasn't using mocks
+- enzyme for component tests if that's a thing we want to do
 
 ## api
 this is an interview for the frontend with react 
@@ -34,6 +35,7 @@ description of endpoint
 
 listFiles
 - other than some basic headers no params 
+- not assuming paging, in the interview i asked how many endpoints are paged and the answer was not many
 
 removeFile
 - send a file object to be removed
@@ -48,7 +50,15 @@ uploadFile
 - file types that are not png/jpeg are rejected before they hit the api, although i would expect the server implementation to check regardless
 - file types that are above 10mb are rejected before they hit the api as well 
 
+## future improvements
+- would create a quick tutorial/walkthrough
+- would create an actual api/implement mocked functionality
+- would refactor filteredFiles to be filteredFileIds and
+- would refactor delete to pass around just an id
+- would implement either back end paging or front end paging
+- would add code to deduplicate multiple uploads
+
 ## other notes
 - didn't spend time minimizing antd styles, if i was future proofing this project i would minimize the styles 
 - link to how to do that - https://ant.design/docs/react/use-with-create-react-app#Use-babel-plugin-import
-- didnt build snapshots for all ui components
+- didnt build component tests for all components just enough to demonstrate how i'd do it

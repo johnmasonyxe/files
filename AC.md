@@ -11,7 +11,7 @@
 - stretch ac - page data on the front end 
 
 ### search documents by name
-- using the api
++ using the api
 + test search box handles bad input 
 + handles <script>alert(1) </script>
 + handles %3Cscript%3Ealert(1) %3C/script%3E
@@ -33,11 +33,10 @@
 + add capcha to assert that a user is human 
 
 ### testing 
-- ui should have tests that ensure functionality is working as intended (100% coverage not expected)
++ ui should have tests that ensure functionality is working as intended (100% coverage not expected)
 + tested logic functions
-- tested view components
++ tested view components (tested subset of components to display basic proficiency)
 - stretch - programatically test lib components to ensure they handle malicious input
-
 + tests for api not required
 
 ## the api
@@ -59,8 +58,8 @@
 + security issues that have been addressed
 + security issues that have not been addressed
 - future improvements
-- libraries used and why
-- api documentation
++ libraries used and why
++ api documentation
 
 ## code quality
 - code should be testable, modular, easy to understand and reuse
