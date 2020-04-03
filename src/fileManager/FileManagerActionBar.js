@@ -20,7 +20,7 @@ const FileManagerActionBar = (props: Props) => {
     } = props;
 
     return (
-        <div style={styles.container}>
+        <div className='flex-grid'>
             <Input.Search
                 placeholder="search documents"
                 onSearch={value => setSearchText(value)}

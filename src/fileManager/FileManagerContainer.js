@@ -15,7 +15,7 @@ const FileManagerContainer = (props: Props) => {
 
     const handleUploadFile = (fileUpload: any) => {
         uploadFile(fileUpload).then((file) => {
-            setFiles([...files, file]);
+            setFiles([file, ...files]);
         })
         // todo: handle api failure
     };

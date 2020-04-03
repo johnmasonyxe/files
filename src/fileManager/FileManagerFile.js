@@ -5,7 +5,15 @@ import type { FileUpload, FileUploads } from './data/types';
 import { Button } from 'antd';
 
 const styles = {
-    container: {border: '1px solid black', width: '300px', height: '200px', marginBottom: '20px'},
+    container: {
+        background: 'white',
+        border: '1px solid #e8e8e8',
+        width: '300px',
+        height: '150px',
+        marginBottom: '20px',
+        display: 'flex',
+        flexDirection: 'column',
+    },
     img: {width: '100px', height: '100px'}
 };
 
@@ -18,15 +26,23 @@ const FileManagerFile = (props: Props) => {
     return (
 
         <div style={styles.container}>
-            <img
-                style={styles.img}
-                src={file.url}
-                alt={file.name}
-            />
-            {file.name}
-            <Button onClick={() => removeFile(file)}>
-                Delete File
-            </Button>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                <div>
+                    <img
+                        style={styles.img}
+                        src={file.url}
+                        alt={file.name}
+                    />
+                </div>
+                <div>
+                    {file.name}
+                </div>
+            </div>
+            <div style={{display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-end', height: '100%'}}>
+                <Button onClick={() => removeFile(file)}>
+                    Delete File
+                </Button>
+            </div>
         </div>
     );
 };
