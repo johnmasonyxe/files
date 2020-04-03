@@ -1,9 +1,9 @@
 // @flow
 import React from 'react';
-import type { FileUpload, FileUploads } from './data/types';
 import FileManagerFile from './FileManagerFile';
-import './fileManagerStyles.scss';
-import { getTotalSizeForFiles } from './data/utils';
+import type { FileUpload, FileUploads } from '../data/types';
+import { getTotalSizeForFiles } from '../data/utils';
+import '../fileManagerStyles.scss';
 
 const styles = {
     container: {},

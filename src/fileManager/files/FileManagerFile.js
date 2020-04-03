@@ -1,9 +1,8 @@
 // @flow
 import React from 'react';
-import FileManagerActionBar from './FileManagerActionBar';
-import type { FileUpload, FileUploads } from './data/types';
 import { Button } from 'antd';
-import { formatBytes } from './data/utils';
+import type { FileUpload } from '../data/types';
+import { formatBytes } from '../data/utils';
 
 const styles = {
     container: {

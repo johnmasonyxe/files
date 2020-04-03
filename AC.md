@@ -3,16 +3,20 @@
 ### upload a document
 + only accepts jpg/png
 + max size 10MB
+- stretch ac - add captcha?
 
 ### list all documents
 - stretch ac - page data on the front end 
 
 ### search documents by name
 - using the api
-- test search box handles bad input 
++ test search box handles bad input 
++ handles <script>alert(1) </script>
++ handles %3Cscript%3Ealert(1) %3C/script%3E
 
 ### delete a document
-- 
+- removes document
+- clears memory?
 
 ## requirements
 - no auth, login, user management

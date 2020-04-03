@@ -1,8 +1,8 @@
 // @flow
 import React  from 'react';
-import FileManagerActionBar from './FileManagerActionBar';
-import FileManagerFileList from './FileManagerFileList';
+import FileManagerActionBarLayout from './actions/FileManagerActionBarLayout';
 import type { FileUpload, FileUploads } from './data/types';
+import FileManagerFileList from './files/FileManagerFileList';
 
 const styles = {
     container: {margin: '20px auto', maxWidth: '960px'}
@@ -25,7 +25,7 @@ const FileManagerLayout = (props: Props) => {
 
     return (
         <div style={styles.container}>
-            <FileManagerActionBar
+            <FileManagerActionBarLayout
                 setSearchText={setSearchText}
                 uploadFile={uploadFile}
             />
