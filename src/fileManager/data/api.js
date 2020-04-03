@@ -7,11 +7,7 @@ import { filter } from 'lodash';
 import { filterFile } from './validators';
 import { MOCK_UPLOADED_FILE_URLS } from './mocks';
 
-const buildApiConfig = () => {
-    return {
-        capchaToken: getCookie('recaptcha-v3-site-key'),
-    };
-};
+const buildApiConfig = () => ({capchaToken: getCookie('recaptcha-v3-site-key')});
 
 // ac specifies 'store a file'
 // decide if this is adequate, i'm mocking 'storing' a file on the back end and passing the relevant data needed to display it

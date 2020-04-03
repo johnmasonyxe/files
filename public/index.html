@@ -19,15 +19,15 @@
 
 <script src="https://www.google.com/recaptcha/api.js?render=6LevYeMUAAAAABloSq1qCTtJuqi2lq0KcIIJRuEq"></script>
 <script>
-    grecaptcha.ready(function () {
-        grecaptcha.execute('my-mocked-site-key', {action: 'homepage'}).then(function (token) {
-            if (token.success) {
-                // i'd make a function to return an appropriate time, but this is all mocked anyway
-                const expires = 'Thu, 18 Dec 2013 12:00:00 UTC';
-                document.cookie = `recaptcha-v3-site-key=mocked-site-key; expires${expires}=; path=/`;
-            }
-        });
-    });
+    // grecaptcha.ready(function () {
+    //     grecaptcha.execute('my-mocked-site-key', {action: 'homepage'}).then(function (token) {
+    //         if (token.success) {
+    //             // i'd make a function to return an appropriate time, but this is all mocked anyway
+    //             const expires = 'Thu, 18 Dec 2013 12:00:00 UTC';
+    //             document.cookie = `recaptcha-v3-site-key=mocked-site-key; expires${expires}=; path=/`;
+    //         }
+    //     });
+    // });
 </script>
 </body>
 </html>

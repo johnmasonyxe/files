@@ -6,9 +6,9 @@ import * as serviceWorker from './serviceWorker';
 
 // note - antd button violates strictmode, current issue -> https://github.com/ant-design/ant-design/issues/22493
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+    <App />,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 

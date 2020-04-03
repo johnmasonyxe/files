@@ -16,7 +16,7 @@ const FileManagerActionBarSearch = (props: Props) => {
         <Input.Search
             className='actions-search-width'
             placeholder="search documents"
-            onSearch={value => setSearchText(value)}
+            onChange={(evt) => setSearchText(evt.target.value)}
             enterButton={<SearchOutlined />}
         />
     );

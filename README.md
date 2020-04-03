@@ -47,12 +47,12 @@ uploadFile
 - file types that are above 10mb are rejected before they hit the api as well 
 
 ## future improvements
-- would create a quick tutorial/walkthrough
-- would create an actual api/implement mocked functionality
-- would refactor filteredFiles to be filteredFileIds and
-- would refactor delete to pass around just an id
-- would implement either back end paging or front end paging
-- would add code to deduplicate multiple uploads
+- create a quick tutorial/walkthrough
+- create an actual api/implement mocked functionality
+- refactor filteredFiles to be filteredFileIds and
+- refactor delete to pass around just an id
+- implement either back end paging or front end paging
+- add code to deduplicate multiple uploads
 
 ## other notes
 - didn't spend time minimizing antd styles, if i was future proofing this project i would minimize the styles 
