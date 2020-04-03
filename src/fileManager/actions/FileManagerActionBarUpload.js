@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { UploadOutlined } from '@ant-design/icons';
 import { Upload, Input, message, Button, Spin } from 'antd';
 import { validateFile } from '../data/validators';
+import { colorPrimary } from '../../App.scss';
 
 const styles = {
     container: {display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'},
@@ -42,8 +43,10 @@ const FileManagerActionBarUpload = (props: Props) => {
         >
             <Button style={{width: '300px'}}>
                 {loadingFile
-                    ? <Spin/>
-                    : <><UploadOutlined/> Click to Upload</>
+                    ? <Spin style={{color: colorPrimary}}/>
+                    : <div>
+                        <UploadOutlined style={{color: colorPrimary}}/> Click to Upload
+                    </div>
                 }
             </Button>
         </Upload>

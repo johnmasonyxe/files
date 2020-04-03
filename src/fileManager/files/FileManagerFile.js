@@ -13,6 +13,7 @@ const styles = {
         marginBottom: '20px',
         display: 'flex',
         flexDirection: 'column',
+        padding: '5px',
     },
     img: {width: '100px', height: '100px'}
 };

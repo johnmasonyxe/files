@@ -4,9 +4,19 @@ import FileManagerFile from './FileManagerFile';
 import type { FileUpload, FileUploads } from '../data/types';
 import { getTotalSizeForFiles } from '../data/utils';
 import '../../App.scss';
+import { colorPrimary } from '../../App.scss';
 
 const styles = {
     container: {},
+    info: {
+        padding: '10px',
+        margin: '30px auto 10px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        background: colorPrimary,
+        color: 'white',
+    },
+    center: {display: 'flex', alignItems: 'center'}
 };
 
 type Props = {
@@ -17,8 +27,8 @@ const FileManagerFileList = (props: Props) => {
     const {files, removeFile} = props;
     return (
         <div>
-            <div className='mobile-container' style={{paddingTop: '20px', margin: 'auto', display: 'flex', justifyContent: 'space-between'}}>
-                <div>{files.length} files</div>
+            <div className='mobile-container' style={styles.info}>
+                <div style={styles.center}>{files.length} files</div>
                 <div>total size: {getTotalSizeForFiles(files)}</div>
             </div>
             <div style={styles.container} className='flex-grid'>

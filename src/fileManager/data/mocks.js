@@ -51,27 +51,27 @@ export const MOCK_FILES: FileUploads = [
         url: 'http://pngimg.com/uploads/pokemon/pokemon_PNG94.png',
         size: 5000,
     },
-    {
-        id: '8',
-        name: 'haunter.png',
-        status: 'done',
-        url: 'http://pngimg.com/uploads/pokemon/pokemon_PNG28.png',
-        size: 3000,
-    },
-    {
-        id: '9',
-        name: 'charizard.png',
-        status: 'done',
-        url: 'http://pngimg.com/uploads/pokemon/pokemon_PNG25.png',
-        size: 1000,
-    },
-    {
-        id: '10',
-        name: 'gengar.png',
-        status: 'done',
-        url: 'http://pngimg.com/uploads/pokemon/pokemon_PNG29.png',
-        size: 1000,
-    },
+    // {
+    //     id: '8',
+    //     name: 'haunter.png',
+    //     status: 'done',
+    //     url: 'http://pngimg.com/uploads/pokemon/pokemon_PNG28.png',
+    //     size: 3000,
+    // },
+    // {
+    //     id: '9',
+    //     name: 'charizard.png',
+    //     status: 'done',
+    //     url: 'http://pngimg.com/uploads/pokemon/pokemon_PNG25.png',
+    //     size: 1000,
+    // },
+    // {
+    //     id: '10',
+    //     name: 'gengar.png',
+    //     status: 'done',
+    //     url: 'http://pngimg.com/uploads/pokemon/pokemon_PNG29.png',
+    //     size: 1000,
+    // },
 ];
 
 export const MOCK_UPLOADED_FILE_URLS = [

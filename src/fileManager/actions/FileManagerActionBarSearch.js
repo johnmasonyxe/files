@@ -2,6 +2,8 @@
 import React from 'react';
 import { Input } from 'antd';
 import '../../App.scss';
+import { SearchOutlined } from '@ant-design/icons';
+import { colorPrimary } from '../../App.scss';
 
 const styles = {
     container: {display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'},
@@ -20,6 +22,7 @@ const FileManagerActionBarSearch = (props: Props) => {
         <Input.Search
             placeholder="search documents"
             onSearch={value => setSearchText(value)}
+            enterButton={<SearchOutlined />}
             style={styles.search}
             className='mobile-container'
         />

@@ -19,3 +19,20 @@ body {
     max-width: 300px;
   }
 }
+
+$color-primary: #e91e63;
+$color-primary-hover: #f06493;
+
+:export {
+  colorPrimary: $color-primary;
+}
+
+.ant-btn-primary {
+  background: $color-primary;
+  border: 1px solid $color-primary;
+}
+
+.ant-btn-primary:hover {
+  background: $color-primary-hover;
+  border: 1px solid $color-primary-hover;
+}
