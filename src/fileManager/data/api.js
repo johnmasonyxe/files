@@ -9,8 +9,6 @@ import { MOCK_UPLOADED_FILE_URLS } from './mocks';
 
 const buildApiConfig = () => {
     return {
-        xsrfCookieName: 'XSRF-TOKEN', // help prevent cross-site request forgeries
-        xsrfHeaderName: 'X-XSRF-TOKEN', // help prevent cross-site request forgeries
         capchaToken: getCookie('recaptcha-v3-site-key'),
     };
 };

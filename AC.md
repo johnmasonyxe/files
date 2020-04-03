@@ -1,8 +1,7 @@
-## todos
-- send id to be deleted not entire object
-- get better understanding of xsrfCookieName and xsrfHeaderName and why they are relevant/useful
-
 ## core ac
++ desktop view
++ mobile view
+
 ### upload a document
 + only accepts jpg/png
 + max size 10MB
@@ -57,13 +56,13 @@
 + all instructions to run application
 + security issues that have been addressed
 + security issues that have not been addressed
-- future improvements
++ future improvements
 + libraries used and why
 + api documentation
 
 ## code quality
-- code should be testable, modular, easy to understand and reuse
-- css should be responsive and use modern approaches to layout eg flex or grid
++ code should be testable, modular, easy to understand and reuse
++ css should be responsive and use modern approaches to layout eg flex or grid
 
 ## not judged on
 - code style
@@ -72,5 +71,5 @@
 
 ## submission
 - send encrypted email to your recruiter with a link to public git repo
-- fill out readme template
-- do not mention kraken
++ fill out readme template
++ do not mention *****

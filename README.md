@@ -1,4 +1,4 @@
-## john mason - submitted april 3 2020
+## john mason - due 1pm april 4 2020
 
 ## installation
 clone from git repo
@@ -9,7 +9,7 @@ run yarn start
 ### addressed
 + qa'd search inputs with malicious input
 + yarn audited npm modules, only one low risk create-react-app dependency issue
-+ mocked capcha v3 functionality
++ mocked capcha v3 functionality, assumes server rate limits multiple requests using same capcha token
 
 not addressed
 - server api implementation, assumes proper CORS implementation
