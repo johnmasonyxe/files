@@ -2,11 +2,7 @@
 import React from 'react';
 import FileManagerActionBarUpload from './FileManagerActionBarUpload';
 import FileManagerActionBarSearch from './FileManagerActionBarSearch';
-
-const styles = {
-    container: {display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'},
-    search: {width: '500px'}
-};
+import './actions.scss';
 
 type Props = {
     uploadFile: any => void,
@@ -19,9 +15,11 @@ const FileManagerActionBarLayout = (props: Props) => {
     } = props;
 
     return (
-        <div style={styles.container}>
+        <div className='actions-layout-container'>
             <FileManagerActionBarSearch setSearchText={setSearchText}/>
-            <FileManagerActionBarUpload uploadFile={uploadFile}/>
+            <div className='actions-layout-upload-container'>
+                <FileManagerActionBarUpload uploadFile={uploadFile}/>
+            </div>
         </div>
     );
 };

@@ -10,7 +10,7 @@ import { MOCK_FILES } from './data/mocks';
 import type { FileUpload } from './data/types';
 import { reject, filter } from 'lodash';
 import { message } from 'antd';
-import '../App.scss';
+import '../base.scss';
 import { filterFile } from './data/validators';
 
 type Props = {}

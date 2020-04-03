@@ -1,17 +1,16 @@
 @import '~antd/dist/antd.css';
 
+$color-border: #e8e8e8;
+$color-primary: #e91e63;
+$color-primary-hover: #f06493;
+$mobile-breakpoint: 600px;
+$tablet-breakpoint: 769px;
+
 body {
   background: #f5f5f5;
 }
 
-.flex-grid {
-  display: grid; /* 1 */
-  grid-template-columns: repeat(auto-fill, 300px); /* 2 */
-  grid-gap: 1rem; /* 3 */
-  justify-content: space-between; /* 4 */
-}
-
-@media (max-width: 600px) {
+@media (max-width: $mobile-breakpoint) {
   .mobile-layout {
     display: flex;
   }
@@ -20,9 +19,7 @@ body {
   }
 }
 
-$color-border: #e8e8e8;
-$color-primary: #e91e63;
-$color-primary-hover: #f06493;
+
 
 :export {
   colorPrimary: $color-primary;

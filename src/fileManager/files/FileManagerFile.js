@@ -3,8 +3,8 @@ import React from 'react';
 import { Button } from 'antd';
 import type { FileUpload } from '../data/types';
 import { formatBytes } from '../data/utils';
-import '../../App.scss';
-import { colorPrimary } from '../../App.scss';
+import '../../base.scss';
+import { colorPrimary } from '../../base.scss';
 
 const styles = {
     container: {

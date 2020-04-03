@@ -8,9 +8,7 @@ function App () {
         maxCount: 2,
     });
     return (
-        <>
-            <FileManagerContainer/>
-        </>
+        <FileManagerContainer/>
     );
 }
 

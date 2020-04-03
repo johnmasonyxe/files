@@ -3,12 +3,7 @@ import React, { useState } from 'react';
 import { UploadOutlined } from '@ant-design/icons';
 import { Upload, Input, message, Button, Spin } from 'antd';
 import { validateFile } from '../data/validators';
-import { colorPrimary } from '../../App.scss';
-
-const styles = {
-    container: {display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'},
-    search: {width: '500px'}
-};
+import { colorPrimary } from '../../base.scss';
 
 type Props = {
     uploadFile: any => void,
@@ -23,7 +18,7 @@ const FileManagerActionBarUpload = (props: Props) => {
         <Upload
             name='file'
             action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
-            headers="authorization: 'authorization-text'"
+            // todo: clean this up
             onChange={(info) => {
                 if (info.file.status === 'uploading') {
                     setLoadingFile(true);

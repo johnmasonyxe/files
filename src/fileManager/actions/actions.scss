@@ -1,0 +1,29 @@
+@import '../../base';
+
+.actions-layout-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.actions-search-width {
+  width: 500px;
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .actions-layout-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+  }
+  .actions-layout-upload-container {
+    margin-bottom: 10px;
+  }
+}
+
+
+@media (max-width: $tablet-breakpoint) {
+  .actions-search-width {
+    width: 300px;
+  }
+}
