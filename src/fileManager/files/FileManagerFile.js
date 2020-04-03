@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from 'antd';
 import type { FileUpload } from '../data/types';
 import { formatBytes } from '../data/utils';
+import '../../App.scss';
 
 const styles = {
     container: {
@@ -26,7 +27,7 @@ const FileManagerFile = (props: Props) => {
     const {file, removeFile} = props;
     return (
 
-        <div style={styles.container}>
+        <div className='card fade' style={styles.container}>
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
                 <div>
                     <img
