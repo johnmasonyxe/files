@@ -12,11 +12,11 @@ const buildApiConfig = () => {
         capchaToken: getCookie('recaptcha-v3-site-key'),
     };
 };
+
 // ac specifies 'store a file'
 // decide if this is adequate, i'm mocking 'storing' a file on the back end and passing the relevant data needed to display it
 export const uploadFileMock = (fileUpload: any): Promise<FileUpload> => {
     const mockUrl = MOCK_UPLOADED_FILE_URLS[Math.round(Math.random() * 9)];
-    console.log({mockUrl});
     return Promise.resolve({
         id: (Math.random() * 1000).toString(),
         name: fileUpload.name,
@@ -32,7 +32,7 @@ export const uploadFile = (fileUpload: any): Promise<FileUpload> => {
             return response.data;
         })
         .catch(error => {
-            throw `error: ${error}`;
+            return error;
         });
 };
 
@@ -50,7 +50,7 @@ export const searchFiles = (searchText: any): Promise<FileUploads> => {
             return response.data;
         })
         .catch(error => {
-            throw `error: ${error}`;
+            return error;
         });
 };
 
@@ -68,6 +68,6 @@ export const removeFile = (fileUpload: any): Promise<FileUpload> => {
             return response.data;
         })
         .catch(error => {
-            throw `error: ${error}`;
+            return error;
         });
 };

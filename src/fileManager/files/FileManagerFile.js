@@ -3,9 +3,8 @@ import React from 'react';
 import { Button } from 'antd';
 import type { FileUpload } from '../data/types';
 import { formatBytes } from '../data/utils';
-import '../../base.scss';
-import './files.scss';
 import { colorPrimary } from '../../base.scss';
+import './files.scss';
 
 
 type Props = {
@@ -15,7 +14,6 @@ type Props = {
 const FileManagerFile = (props: Props) => {
     const {file, removeFile} = props;
     return (
-
         <div className='card fade files-file-container'>
             <div className='files-file-card-container'>
                 <div>

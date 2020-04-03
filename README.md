@@ -1,5 +1,3 @@
-## john mason - due 1pm april 4 2020
-
 ## installation
 - clone from git repo  
 - run yarn install  
@@ -13,7 +11,7 @@ addressed
 
 not addressed  
 - server api implementation, assumes proper CORS implementation
-- did not programatically test library inputs to ensure they properly handle malicious input
+- did not programatically test library components to ensure they properly handle malicious input
 
 
 ## libraries

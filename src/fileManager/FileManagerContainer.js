@@ -1,16 +1,15 @@
 // @flow
 import React, { useState } from 'react';
-import FileManagerLayout from './FileManagerLayout';
+import { reject} from 'lodash';
+import { message } from 'antd';
 import {
     uploadFileMock as uploadFile,
     removeFileMock as removeFile,
     searchFilesMock as searchFiles
 } from './data/api';
 import { MOCK_FILES } from './data/mocks';
+import FileManagerLayout from './FileManagerLayout';
 import type { FileUpload } from './data/types';
-import { reject, filter } from 'lodash';
-import { message } from 'antd';
-import '../base.scss';
 import { filterFile } from './data/validators';
 
 type Props = {}
@@ -58,7 +57,7 @@ const FileManagerContainer = (props: Props) => {
     };
 
     return (
-        <div className='mobile-layout'>
+        <div>
             <FileManagerLayout
                 files={filteredFiles}
                 setSearchText={handleSearchFiles}

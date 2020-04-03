@@ -35,8 +35,8 @@
 + ui should have tests that ensure functionality is working as intended (100% coverage not expected)
 + tested logic functions
 + tested view components (tested subset of components to display basic proficiency)
-- stretch - programatically test lib components to ensure they handle malicious input
 + tests for api not required
+- stretch - programatically test lib components to ensure they handle malicious input
 
 ## the api
 + can use api server, fake api, mock api, external service
@@ -70,6 +70,6 @@
 - https configuration
 
 ## submission
-- send encrypted email to your recruiter with a link to public git repo
 + fill out readme template
 + do not mention *****
+- send encrypted email to your recruiter with a link to public git repo

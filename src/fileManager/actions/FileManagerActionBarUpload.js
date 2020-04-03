@@ -1,10 +1,9 @@
 // @flow
 import React, { useState } from 'react';
 import { UploadOutlined } from '@ant-design/icons';
-import { Upload, Input, message, Button, Spin } from 'antd';
+import { Upload, message, Button, Spin } from 'antd';
 import { validateFile } from '../data/validators';
 import { colorPrimary } from '../../base.scss';
-import { handleUploadChange } from './utils';
 
 type Props = {
     uploadFile: any => void,
@@ -28,11 +27,11 @@ const FileManagerActionBarUpload = (props: Props) => {
 
     return (
         <Upload
+            // get opinions on alternate implementation, too side effecty for me
+            // onChange={uploadData => handleUploadChange(uploadData, setLoadingFile, uploadFile)}
+            onChange={handleUploadChange}
             name='file'
             action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
-            onChange={handleUploadChange}
-            // get opinions on this implementation, too side effecty for me
-            // onChange={uploadData => handleUploadChange(uploadData, setLoadingFile, uploadFile)}
             showUploadList={false}
             beforeUpload={validateFile}
         >
