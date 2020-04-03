@@ -15,6 +15,7 @@ not addressed
 - antd for higher order view components
 - lodash for nice pure performant functions
 - scss for more styling control
+- axios for demonstrating how i'd send requests if i wasn't using mocks
 
 ## api
 - this is an interview for the frontend with react, the api will be mocked because my ability to build good apis is not as relevant as my ability to create clean react code
