@@ -15,7 +15,7 @@ const FileManagerActionBarUpload = (props: Props) => {
     } = props;
 
     const handleUploadChange = (uploadData: any) => {
-        if (uploadData.file.status === 'uploading') {
+        if (uploadData.file.status === 'uploading' && !loadingFile) {
             setLoadingFile(true);
         } else if (uploadData.file.status === 'done') {
             uploadFile(uploadData.file);
