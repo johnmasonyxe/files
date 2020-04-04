@@ -39,7 +39,7 @@ const FileManagerActionBarUpload = (props: Props) => {
                 {loadingFile
                     ? <Spin style={{color: colorPrimary}}/>
                     : <div>
-                        <UploadOutlined style={{color: colorPrimary}}/> Click to Upload
+                        <UploadOutlined style={{color: colorPrimary}}/> Upload a PNG/JPG
                     </div>
                 }
             </Button>

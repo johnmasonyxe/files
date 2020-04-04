@@ -122,7 +122,7 @@ exports[`FileManagerActionBarLayout should render correctly 1`] = `
                   />
                 </svg>
               </span>
-               Click to Upload
+               Upload a PNG/JPG
             </div>
           </button>
         </span>
